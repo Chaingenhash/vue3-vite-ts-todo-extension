@@ -1,0 +1,46 @@
+@import 'vuetify/styles';
+
+.drag-ghost {
+    @extend .mt-4 !optional;
+    @extend .ml-9;
+    min-width: 0;
+    opacity: 0.3;
+  }
+
+  .dragging-box{
+    min-height: 60px;
+  }
+  .drag-item{
+
+    @extend .pa-3, .pr-8, .my-2, .elevation-1, .bg-teal-lighten-1;
+    @extend .rounded-xl, .rounded-be-0, .d-flex, .align-start ;
+    min-height: 60px;
+  font-size: 12px;
+
+  }
+
+.drag-options{
+  
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.9;
+  max-height: 100%;
+  height: 100%;
+  font-size: 16px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+
+}
+
+.group-hover-flex:hover{
+  opacity: 1;
+}
+
+.group-hidden{
+  opacity: 0;
+}
