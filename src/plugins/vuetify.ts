@@ -1,6 +1,9 @@
 /**
  * Vuetify3 Plugin
  */
+
+ import "../main.scss";
+
 // Vuetify
 import * as directives from 'vuetify/directives';
 import * as components from 'vuetify/components';
