@@ -5,27 +5,27 @@ import {
   type NavigationGuardNext,
   type RouteLocationNormalized,
   type RouteRecordRaw,
-} from "vue-router";
-import { nextTick } from "vue";
+} from 'vue-router';
+import { nextTick } from 'vue';
 
 // Pinia Store
-import GlobalStore from "@/store/GlobalStore";
-import store from "@/store";
+import GlobalStore from '@/store/GlobalStore';
+import store from '@/store';
 
 // Components
-import AboutPage from "@/views/AboutPage.vue";
-import HomePage from "@/views/HomePage.vue";
+import AboutPage from '@/views/AboutPage.vue';
+import HomePage from '@/views/HomePage.vue';
 
 /** Router Rules */
 const routes: RouteRecordRaw[] = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: HomePage,
   },
   {
-    path: "/about",
-    name: "About",
+    path: '/about',
+    name: 'About',
     component: AboutPage,
   },
 ];

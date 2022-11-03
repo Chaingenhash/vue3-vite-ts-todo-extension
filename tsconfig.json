@@ -1,7 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig.json",
-  "files": [],
+  "files": ["./manifest.json"],
   "compilerOptions": {
+    "composite": true,
     "newLine": "lf"
   },
   "references": [

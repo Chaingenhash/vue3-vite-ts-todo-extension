@@ -1,11 +1,14 @@
 import { defineConfig, type UserConfig } from 'vite';
 import { visualizer } from 'rollup-plugin-visualizer';
-import checker from 'vite-plugin-checker';
+// import checker from 'vite-plugin-checker';
 import vue from '@vitejs/plugin-vue';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 
 import { fileURLToPath, URL } from 'node:url';
 import fs from 'node:fs';
+
+import { crx } from '@crxjs/vite-plugin';
+import manifest from './manifest.json';
 
 /**
  * Vite Configure
@@ -46,14 +49,15 @@ export default defineConfig(async ({ command, mode }): Promise<UserConfig> => {
       }),
       // vite-plugin-checker
       // https://github.com/fi3ework/vite-plugin-checker
-      checker({
-        typescript: true,
-        vueTsc: true,
-        eslint: {
-          lintCommand:
-            'eslint . --fix --cache --cache-location ./node_modules/.vite/vite-plugin-eslint', // for example, lint .ts & .tsx
-        },
-      }),
+      // checker({
+      //   typescript: true,
+      //   vueTsc: true,
+      //   eslint: {
+      //     lintCommand:
+      //       'eslint . --fix --cache --cache-location ./node_modules/.vite/vite-plugin-eslint', // for example, lint .ts & .tsx
+      //   },
+      // }),
+      crx({ manifest }),
     ],
     // Build Options
     // https://vitejs.dev/config/build-options.html
@@ -66,17 +70,17 @@ export default defineConfig(async ({ command, mode }): Promise<UserConfig> => {
       rollupOptions: {
         // @ts-ignore
         output: {
-          manualChunks: {
-            // Split external library from transpiled code.
-            vue: ['vue', 'vue-router', 'pinia', 'pinia-plugin-persistedstate'],
-            vuetify: [
-              'vuetify',
-              'vuetify/components',
-              'vuetify/directives',
-              'webfontloader',
-            ],
-            materialdesignicons: ['@mdi/font/css/materialdesignicons.css'],
-          },
+          // manualChunks: {
+          //   // Split external library from transpiled code.
+          //   vue: ['vue', 'vue-router', 'pinia', 'pinia-plugin-persistedstate'],
+          //   vuetify: [
+          //     'vuetify',
+          //     'vuetify/components',
+          //     'vuetify/directives',
+          //     'webfontloader',
+          //   ],
+          //   materialdesignicons: ['@mdi/font/css/materialdesignicons.css'],
+          // },
           plugins: [
             mode === 'analyze'
               ? // rollup-plugin-visualizer

@@ -8,6 +8,9 @@ import { createVuetify } from 'vuetify';
 // see https://next.vuetifyjs.com/en/features/treeshaking/
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
+// const components = require('vuetify/lib/components');
+// const directives = require('vuetify/lib/directives');
+// import * as directives from 'vuetify/directives';
 
 // Translations provided by Vuetify
 import { en } from 'vuetify/locale';
@@ -17,6 +20,7 @@ import { loadFonts } from './webfontloader';
 loadFonts();
 
 // Styles
+// require('vuetify/styles');
 import 'vuetify/styles';
 import '@mdi/font/css/materialdesignicons.css';
 
